@@ -1,0 +1,7 @@
+.box {
+  &:hover {
+    h3 {
+      color: hsl(var(--background));
+    }
+  }
+}

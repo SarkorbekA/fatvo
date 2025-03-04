@@ -1,0 +1,7 @@
+.footerEmail {
+  &:focus {
+    & + div {
+      color: #7a7a7a;
+    }
+  }
+}
