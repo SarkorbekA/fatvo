@@ -339,7 +339,6 @@ export default function Header() {
         {!isLoggedIn && (
           <Dialog open={isRegisterOpen} onOpenChange={setIsRegisterOpen}>
             <DialogTrigger asChild>
-
             </DialogTrigger>
             <DialogContent className="p-0 dialog gap-0 max-w-[378px]">
               <DialogHeader className="flex h-[50px] px-5 flex-row items-center justify-between">

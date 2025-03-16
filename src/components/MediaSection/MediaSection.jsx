@@ -34,6 +34,10 @@ function MediaSection() {
         className="w-[10px] h-[10px] bg-[#FBB04C33] bottom-0 right-0 absolute rounded-full"
         style={{ boxShadow: '0px 0px 400px 350px #FBB04C33' }}
       ></div>
+      <div
+        className="w-[700px] h-[700px] max-sm:w-[400px] max-sm:h-[400px] max-sm:-translate-x-[100px] max-sm:-translate-y-[200px] -translate-x-[200px] -translate-y-[400px] z-[10] top-0 left-0 absolute rounded-full bg-no-repeat bg-cover"
+        style={{ backgroundImage: 'url(/media-vector.png)' }}
+      ></div>
       <div className="container flex flex-col relative z-[11]">
         <div className="flex items-end justify-between w-full mb-10 gap-4 max-sm:mb-5">
           <div>
@@ -41,7 +45,7 @@ function MediaSection() {
             <h3 className={`text-background mt-3 [@media(max-width:576px)]:mt-1 [@media(max-width:576px)]:text-[22px]/[28px] font-extrabold text-[40px]/[52px] -tracking-[0.64px] max-w-[750px]`}>{t("video_answers")}</h3>
           </div>
           <Button size="lg" className="max-md:hidden" asChild>
-            <Link href="/media">
+            <Link href="/media/videos">
               <h3>{t("all_video_answers")}</h3>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.76953 5.86V2.5H14.2295V5.86H9.76953Z" fill="white" stroke="white" />
@@ -54,7 +58,7 @@ function MediaSection() {
         </div>
         <Videos />
         <Button size="lg" className="mx-auto md:hidden [@media(max-width:576px)]:w-full" asChild>
-          <Link href="/media">
+          <Link href="/media/videos">
             <h3>{t("all_video_answers")}</h3>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.76953 5.86V2.5H14.2295V5.86H9.76953Z" fill="white" stroke="white" />
@@ -69,7 +73,7 @@ function MediaSection() {
             <h3 className={`text-background mt-3 [@media(max-width:576px)]:mt-1 [@media(max-width:576px)]:text-[22px]/[28px] font-extrabold text-[40px]/[52px] -tracking-[0.64px] max-w-[750px]`}>{t("audio_answers")}</h3>
           </div>
           <Button size="lg" className="max-md:hidden" asChild>
-            <Link href="/media">
+            <Link href="/media/audios">
               <h3>{t("all_audio_answers")}</h3>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.7997 19.1701V18.7132L11.3446 18.6721C7.60883 18.3351 4.67969 15.1979 4.67969 11.3901V9.81011C4.67969 9.69625 4.76583 9.61011 4.87969 9.61011C4.99354 9.61011 5.07969 9.69625 5.07969 9.81011V11.4001C5.07969 15.2162 8.18355 18.3201 11.9997 18.3201C15.8158 18.3201 18.9197 15.2162 18.9197 11.4001V9.82011C18.9197 9.70625 19.0058 9.62011 19.1197 9.62011C19.2197 9.62011 19.3142 9.70425 19.3197 9.8186V11.3901C19.3197 15.1985 16.3802 18.3445 12.6559 18.672L12.1997 18.7121V19.1701V21.3001C12.1997 21.414 12.1135 21.5001 11.9997 21.5001C11.8858 21.5001 11.7997 21.414 11.7997 21.3001V19.1701Z" fill="white" stroke="white" />
@@ -80,7 +84,7 @@ function MediaSection() {
         </div>
         <Audios />
         <Button size="lg" className="mx-auto md:hidden [@media(max-width:576px)]:w-full" asChild>
-          <Link href="/media">
+          <Link href="/media/audios">
             <h3>{t("all_audio_answers")}</h3>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11.7997 19.1701V18.7132L11.3446 18.6721C7.60883 18.3351 4.67969 15.1979 4.67969 11.3901V9.81011C4.67969 9.69625 4.76583 9.61011 4.87969 9.61011C4.99354 9.61011 5.07969 9.69625 5.07969 9.81011V11.4001C5.07969 15.2162 8.18355 18.3201 11.9997 18.3201C15.8158 18.3201 18.9197 15.2162 18.9197 11.4001V9.82011C18.9197 9.70625 19.0058 9.62011 19.1197 9.62011C19.2197 9.62011 19.3142 9.70425 19.3197 9.8186V11.3901C19.3197 15.1985 16.3802 18.3445 12.6559 18.672L12.1997 18.7121V19.1701V21.3001C12.1997 21.414 12.1135 21.5001 11.9997 21.5001C11.8858 21.5001 11.7997 21.414 11.7997 21.3001V19.1701Z" fill="white" stroke="white" />

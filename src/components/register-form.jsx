@@ -151,9 +151,9 @@ export function RegisterForm({ onLogin, className, ...props }) {
   }, []);
 
   return (
-    <div className={cn("flex flex-col", className)} {...props}>
-      <Card className="overflow-hidden">
-        <CardContent className="grid p-0">
+    <div className={cn("flex flex-col max-h-[500px]", className)} {...props}>
+      <Card className="overflow-hidden h-full">
+        <CardContent className="grid p-0 h-full overflow-y-auto scrollbarY">
           <form className="px-5 py-6 [@media(max-width:576px)]:px-3" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-1">

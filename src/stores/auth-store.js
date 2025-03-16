@@ -31,6 +31,8 @@ const useAuthStore = create((set) => ({
       console.error('Ошибка при проверке аутентификации:', error);
       set({ isLoggedIn: false });
 
+      localStorage.removeItem('pocketbase_auth');
+
       return false;
     }
   },

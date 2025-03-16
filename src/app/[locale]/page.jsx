@@ -61,9 +61,10 @@ export default function Home() {
         <ArticlesSection />
 
         <BooksSection />
+
+        <MediaSection className="relative z-[9]" />
       </div>
 
-      <MediaSection className="relative z-[9]" />
     </div>
   );
 }

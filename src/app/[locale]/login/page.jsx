@@ -24,6 +24,8 @@ export default function LoginPage() {
     } catch (error) {
       console.error('Ошибка при проверке аутентификации:', error);
 
+localStorage.removeItem('pocketbase_auth');
+
       return false;
     }
   };

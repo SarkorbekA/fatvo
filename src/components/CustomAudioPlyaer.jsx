@@ -1,8 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import { Pause } from "lucide-react";
 
+let currentAudio = null;
+
 const CustomAudioPlayer = ({ src, title, cover }) => {
   const audioRef = useRef(null);
+  const progressBarRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -20,10 +23,36 @@ const CustomAudioPlayer = ({ src, title, cover }) => {
   const togglePlay = () => {
     if (isPlaying) {
       audioRef.current.pause();
+      setIsPlaying(false);
     } else {
+      if (currentAudio && currentAudio !== audioRef.current) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+
+        // Обновляем состояние предыдущего плеера
+        if (currentAudio._setIsPlaying) {
+          currentAudio._setIsPlaying(false);
+        }
+      }
+
+      currentAudio = audioRef.current;
+      currentAudio._setIsPlaying = setIsPlaying;
       audioRef.current.play();
+      setIsPlaying(true);
     }
-    setIsPlaying(!isPlaying);
+  };
+
+  // Обработчик кликов по прогресс-бару
+  const handleProgressClick = (e) => {
+    if (!audioRef.current || !progressBarRef.current || duration === 0) return;
+
+    const rect = progressBarRef.current.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const newTime = (clickX / rect.width) * duration;
+
+    audioRef.current.currentTime = newTime;
+    setProgress((newTime / duration) * 100);
+    setCurrentTime(newTime);
   };
 
   useEffect(() => {
@@ -53,14 +82,17 @@ const CustomAudioPlayer = ({ src, title, cover }) => {
             <div className="flex items-center text-xs gap-1 text-white">
               <h3>{formatTime(currentTime)}</h3> / <h3>{formatTime(duration)}</h3>
             </div>
-            <div className="relative w-full overflow-hidden rounded-md h-1.5 bg-[#FFFFFF8A]">
+            <div
+              className="relative w-full overflow-hidden rounded-md h-1.5 bg-[#FFFFFF8A] cursor-pointer"
+              ref={progressBarRef}
+              onClick={handleProgressClick}
+            >
               <div className="absolute top-0 left-0 h-1.5 bg-orange-500" style={{ width: `${progress}%` }}></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Аудио-трек */}
       <audio ref={audioRef} onTimeUpdate={handleTimeUpdate} src={src} />
     </div>
   );

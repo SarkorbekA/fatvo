@@ -126,7 +126,7 @@ const Articles = () => {
                 <div className="grow flex flex-col justify-between gap-2 p-4">
                   <div className="flex flex-col gap-2">
                     <h3 className="text-[#FBB04C] font-medium max-sm:text-sm/[14px]">
-                      {_.expand.category.name}
+                      {_?.expand?.category?.name}
                     </h3>
                     <h3 className="text-text font-bold line-clamp-2 text-lg/[23px] max-sm:text-base/[21px]">
                       {_.title}
