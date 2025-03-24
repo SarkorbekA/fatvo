@@ -125,7 +125,7 @@ function QuestionsPage({ searchParams }) {
       }
 
       filters.push(requiredFieldsFilter);
-      filters.push('scope = ""')
+      filters.push('scope != "private"')
 
       const filterString = filters.length ? filters.join(' && ') : '';
 

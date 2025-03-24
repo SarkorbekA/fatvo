@@ -130,7 +130,7 @@ const Questions = () => {
       const resultList = await pb.collection('question_answers').getList(1, 10, {
         sort: '-views',
         fields: 'title,titleLat,id,created,isSaved',
-        filter: '(answer != "" || answerLat != "" || answerCyr != "") && scope = "public"',
+        filter: '(answer != "" || answerLat != "" || answerCyr != "") && scope != "private"',
       });
 
       setQuestions(resultList.items);

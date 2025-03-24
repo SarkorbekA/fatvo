@@ -37,7 +37,7 @@ export default function MostRead({ id, quesId }) {
       filters.push(`category="${id}"`);
     }
 
-    filters.push('scope = ""')
+    filters.push('scope != "private"')
     filters.push(requiredFieldsFilter);
 
     const filterString = filters.length ? filters.join(' && ') : '';
