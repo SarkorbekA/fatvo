@@ -156,7 +156,7 @@ export default function Header() {
               <DropdownMenuTrigger asChild>
                 <button className='flex items-center gap-1.5'>
                   {pb.authStore?.record?.avatar.length > 0 && <div className='w-12 h-12 rounded-full overflow-hidden'>
-                    <img className='w-full h-full select-none' src={`${baseUrl}${pb.authStore.record.collectionId}/${pb.authStore.record.id}/${pb.authStore?.record?.avatar}`} alt="avatar" />
+                    <img className='w-full h-full object-cover select-none' src={`${baseUrl}${pb.authStore.record.collectionId}/${pb.authStore.record.id}/${pb.authStore?.record?.avatar}`} alt="avatar" />
                   </div>
                   }
                   {!pb.authStore?.record?.avatar.length && <div className='w-12 h-12 rounded-full flex items-center justify-center text-brand border'>
@@ -254,7 +254,7 @@ export default function Header() {
                   <DropdownMenuTrigger asChild>
                     <button className='flex items-center gap-1.5'>
                       {pb.authStore?.record?.avatar.length > 0 && <div className='w-12 h-12 rounded-full overflow-hidden'>
-                        <img className='w-full h-full select-none' src={`${baseUrl}${pb.authStore.record.collectionId}/${pb.authStore.record.id}/${pb.authStore?.record?.avatar}`} alt="avatar" />
+                        <img className='w-full h-full object-cover select-none' src={`${baseUrl}${pb.authStore.record.collectionId}/${pb.authStore.record.id}/${pb.authStore?.record?.avatar}`} alt="avatar" />
                       </div>
                       }
                       {!pb.authStore?.record?.avatar.length && <div className='w-12 h-12 rounded-full flex items-center justify-center text-brand border'>

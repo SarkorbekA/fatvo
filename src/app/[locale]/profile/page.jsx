@@ -218,7 +218,7 @@ function ProfilePage() {
             <div className='flex gap-4 items-center max-sm:flex-col w-full'>
               <div className='p-1'>
                 {user.avatar?.length > 0 && <div className='w-[120px] h-[120px] rounded-full overflow-hidden'>
-                  <img draggable='false' className='w-full h-full select-none' src={`${baseUrl}${user.collectionId}/${user.id}/${user.avatar}`} alt="avatar" />
+                  <img draggable='false' className='w-full h-full object-cover select-none' src={`${baseUrl}${user.collectionId}/${user.id}/${user.avatar}`} alt="avatar" />
                 </div>
                 }
                 {!user.avatar?.length && <div className='w-[120px] h-[120px] rounded-full flex items-center justify-center text-brand border'>
@@ -282,7 +282,7 @@ function ProfilePage() {
                   <div className='flex flex-col items-center gap-4'>
                     <div className='relative rounded-full overflow-hidden'>
                       {user.avatar?.length > 0 && <div className='w-[120px] h-[120px] rounded-full overflow-hidden'>
-                        <img className='w-full h-full' src={`${baseUrl}${user.collectionId}/${user.id}/${user.avatar}`} alt="avatar" />
+                        <img className='w-full h-full object-cover' src={`${baseUrl}${user.collectionId}/${user.id}/${user.avatar}`} alt="avatar" />
                       </div>
                       }
                       {!user.avatar?.length && <div className='w-[120px] h-[120px] rounded-full flex items-center justify-center text-brand border'>

@@ -125,7 +125,7 @@ function QuestionsPage({ searchParams }) {
       }
 
       filters.push(requiredFieldsFilter);
-      filters.push('scope = "public"')
+      filters.push('scope = ""')
 
       const filterString = filters.length ? filters.join(' && ') : '';
 
@@ -400,7 +400,7 @@ const Questions = ({ total, postsPerPage, currentPage, isLoading, questions }) =
             <Link href={`/answers/${_.id}`} className='w-full h-full justify-between px-4 py-3 flex flex-col gap-3'>
               <div className="flex flex-col gap-2">
                 <h3 className="text-[#FBB04C] [@media(max-width:576px)]:text-sm/[14px] font-medium">
-                  {_.expand.category.name}
+                  {_.expand?.category?.name}
                 </h3>
                 <h3 className="text-text [@media(max-width:576px)]:text-base/[21px] line-clamp-2 font-semibold text-xl/[26px]">
                   {_.titleLat}

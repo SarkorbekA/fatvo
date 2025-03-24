@@ -37,7 +37,7 @@ export default function MostRead({ id, quesId }) {
       filters.push(`category="${id}"`);
     }
 
-    filters.push('scope = "public"')
+    filters.push('scope = ""')
     filters.push(requiredFieldsFilter);
 
     const filterString = filters.length ? filters.join(' && ') : '';
@@ -95,7 +95,7 @@ export default function MostRead({ id, quesId }) {
           <Link href={`/answers/${_.id}`} className='w-full px-4 py-3 flex h-full flex-col justify-between gap-3'>
             <div className="flex flex-col gap-2">
               <h3 className="text-[#FBB04C] [@media(max-width:576px)]:text-sm/[14px] font-medium">
-                {_.expand.category.name}
+                {_.expand?.category?.name}
               </h3>
               <h3 className="text-text [@media(max-width:576px)]:text-base/[21px] h-[52px] [@media(max-width:576px)]:h-[42px] line-clamp-2 font-semibold text-xl/[26px]">
                 {_.titleLat}
